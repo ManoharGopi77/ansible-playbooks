@@ -1,0 +1,19 @@
+---
+- name: implemeting playscope variables'
+  hosts: all
+  vars:
+    - a: tomcat10
+    - b: present
+    - c: yes
+  tasks:
+    - name: install uninstall s/w's
+      apt:
+         name: "{{a}}
+         state: "{{b}}
+         update_cacahe: "{{c}}"
+ ...
+         
+         
+    
+    
+  
