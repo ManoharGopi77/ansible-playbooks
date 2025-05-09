@@ -1,0 +1,20 @@
+---
+- name: implemeting tags
+  hosts: all
+  tasks:
+    - name: install tree
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+      tags: tree_installation
+    - name: creat user
+      user:
+        name: manohar
+        password: manohargopi
+      tags: user_creation
+    - name: copy passwd file
+      copy:
+        src: /etc/passwd
+        dest: /tmp
+...
